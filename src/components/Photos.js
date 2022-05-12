@@ -41,7 +41,7 @@ const Photos = () => {
             const img_width = res.width;
             const id = localStorage.getItem('idUsers')
 
-            axios.post('http://localhost:5000/upload', {
+            axios.post('https://koketjocomgallery.herokuapp.com/upload', {
                 publicId: img_publicId,
                 fileName: img_fileName,
                 uploadDate: img_uploadDate,
@@ -78,7 +78,7 @@ const Photos = () => {
     }
 
     const showImages = () => {
-        axios.get('http://localhost:5000/images').then((response) => {
+        axios.get('https://koketjocomgallery.herokuapp.com/images').then((response) => {
             if(response.data.error){
                 navigate('/')
                 localStorage.clear()
@@ -90,7 +90,7 @@ const Photos = () => {
     }
 
     const updateImage = (publicId) => {
-        axios.put('http://localhost:5000/update', {
+        axios.put('https://koketjocomgallery.herokuapp.com/update', {
             newPublicId: newPublicId,
             publicId: publicId
         }).then((response) => {
@@ -116,7 +116,7 @@ const Photos = () => {
     }
 
     const deleteImage = (publicId) => {
-        axios.delete(`http://localhost:5000/delete/${publicId}`).then((response) => {
+        axios.delete(`https://koketjocomgallery.herokuapp.com/delete/${publicId}`).then((response) => {
             if(response.data.error){
                 window.alert(response.data.error)
             } else {
@@ -134,7 +134,7 @@ const Photos = () => {
     }
 
     useEffect(() => {        
-        axios.get('http://localhost:5000/images').then((response) => {
+        axios.get('https://koketjocomgallery.herokuapp.com/images').then((response) => {
             setImagesList(response.data)
             //console.log(response.data)            
         })

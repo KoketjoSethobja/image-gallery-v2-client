@@ -11,7 +11,7 @@ const Register = () => {
     axios.defaults.withCredentials = true;
     
     const register = (e) => {
-        axios.post('http://localhost:5000/register', {
+        axios.post('https://koketjocomgallery.herokuapp.com/register', {
             username: usernameReg,
             password: passwordReg
         }).then((response) => {

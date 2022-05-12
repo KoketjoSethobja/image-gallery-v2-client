@@ -12,7 +12,7 @@ const Login = () => {
 
     const login = (e) => {
         
-        axios.post('http://localhost:5000/login', {
+        axios.post('https://koketjocomgallery.herokuapp.com/login', {
             username: username,
             password: password
         }).then((response) => {
