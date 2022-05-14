@@ -10,6 +10,8 @@ const Login = () => {
     const [status, setStatus] = useState("")
     const navigate = useNavigate();    
 
+    axios.defaults.withCredentials = true;
+
     const login = (e) => {
         
         axios.post('https://koketjocomgallery.herokuapp.com/login', {
@@ -38,9 +40,7 @@ const Login = () => {
     //     } else {
     //         navigate('/')
     //     }
-    // })
-
-    axios.defaults.withCredentials = true;
+    // })    
 
     return (
         <div className='container'>
